@@ -1,0 +1,35 @@
+# Maven
+target/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Allure
+allure-results/
+allure-report/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Compiled Java files
+*.class
+
+# Selenium Screenshots
+screenshots/
+
+# Temporary files
+temp/

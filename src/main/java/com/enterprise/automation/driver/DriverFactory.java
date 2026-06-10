@@ -73,18 +73,21 @@ public final class DriverFactory {
 
         try {
 
-            String username =
+            /*String username =
                     ConfigManager.getRequired("browserstack.username");
 
             String accessKey =
-                    ConfigManager.getRequired("browserstack.accesskey");
+                    ConfigManager.getRequired("browserstack.accesskey");*/
+            String username = System.getenv("BROWSERSTACK_USERNAME");
+            String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 
             MutableCapabilities capabilities =
                     new MutableCapabilities();
-
+            String browser =
+                    System.getProperty(
+                            "browser", ConfigManager.getRequired("bs.browser"));
             capabilities.setCapability(
-                    "browserName",
-                    ConfigManager.getRequired("bs.browser"));
+                    "browserName",browser);
 
             capabilities.setCapability(
                     "browserVersion",
@@ -105,9 +108,12 @@ public final class DriverFactory {
                     "projectName",
                     ConfigManager.getRequired("bs.projectName"));
 
+            String buildName =
+                    System.getenv("BUILD_TAG") != null
+                            ? System.getenv("BUILD_TAG")
+                            : ConfigManager.getRequired("bs.buildName");
             bstackOptions.put(
-                    "buildName",
-                    ConfigManager.getRequired("bs.buildName"));
+                    "buildName",buildName);
 
             bstackOptions.put(
                     "sessionName",

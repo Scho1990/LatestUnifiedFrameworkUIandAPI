@@ -17,7 +17,7 @@
         <restassured.version>5.5.0</restassured.version>
         <allure.version>2.29.0</allure.version>
         <aspectj.version>1.9.22.1</aspectj.version>
-        <suiteXmlFile>src/test/resources/suites/ui-testng.xml</suiteXmlFile>
+
     </properties>
 
     <dependencies>
