@@ -1,0 +1,2 @@
+java.lang.RuntimeException: com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "error" (class com.enterprise.automation.api.models.UserResponse), not marked as ignorable (4 known properties: "id", "job", "name", "createdAt"])
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 11] (through reference chain: com.enterprise.automation.api.models.UserResponse["error"])

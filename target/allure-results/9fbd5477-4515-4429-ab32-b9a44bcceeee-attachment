@@ -1,0 +1,1 @@
+com.enterprise.automation.exceptions.FrameworkException: WebDriver is not initialized for thread: TestNG-test-API Tests-1

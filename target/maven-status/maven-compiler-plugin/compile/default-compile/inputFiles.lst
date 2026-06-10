@@ -1,0 +1,10 @@
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\config\ConfigManager.java
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\constants\FrameworkConstants.java
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\driver\BrowserType.java
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\driver\DriverFactory.java
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\driver\DriverManager.java
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\exceptions\FrameworkException.java
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\reports\AllureAttachment.java
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\utils\JsonUtils.java
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\utils\ScreenshotUtil.java
+C:\Users\Lenovo\Documents\Codex\2026-06-09\i-want-to-create-a-automation\work\enterprise-automation-framework\src\main\java\com\enterprise\automation\utils\WaitUtils.java
