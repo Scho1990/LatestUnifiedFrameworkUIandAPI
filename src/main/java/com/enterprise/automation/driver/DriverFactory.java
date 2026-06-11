@@ -117,7 +117,7 @@ public final class DriverFactory {
 
             bstackOptions.put(
                     "sessionName",
-                    ConfigManager.getRequired("bs.browser")+"_"+testMethodName);
+                    browser+"_"+testMethodName);
 
             capabilities.setCapability(
                     "bstack:options",
