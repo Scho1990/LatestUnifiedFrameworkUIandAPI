@@ -56,9 +56,9 @@ jobs:
         run: mvn clean compile
 
       - name: Execute TestNG Suite
-        run: >
-          mvn test -Dbrowser=${{ github.event.inputs.browser || 'chrome' }}
-          -DsuiteXmlFile=src/test/resources/suites/${{ github.event.inputs.suite || 'ui-testng.xml' }}
+        shell: cmd
+        run: |
+         mvn test -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} -DsuiteXmlFile=src/test/resources/suites/${{ github.event.inputs.suite || 'ui-testng.xml' }}
 
       - name: Upload Surefire Reports
         if: always()
