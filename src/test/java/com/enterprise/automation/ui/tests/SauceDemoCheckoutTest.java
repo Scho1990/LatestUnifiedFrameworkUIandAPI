@@ -49,7 +49,6 @@ public class SauceDemoCheckoutTest extends BaseUiTest {
                 .as("Added product buttons should change to Remove")
                 .allSatisfy(product -> assertThat(inventoryPage.getActionButtonText(product))
                         .isEqualTo(selectedButtonText));
-
         assertThat(inventoryPage.getCartCount())
                 .as("Cart badge count")
                 .isEqualTo(addedProducts.size());
@@ -67,7 +66,6 @@ public class SauceDemoCheckoutTest extends BaseUiTest {
         assertThat(checkoutInformationPage.getPageTitle())
                 .as("Checkout information page title")
                 .isEqualTo(ConfigManager.getRequired("saucedemo.checkout.information.title"));
-
         CheckoutOverviewPage checkoutOverviewPage = checkoutInformationPage.enterCustomerInformation(
                 ConfigManager.getRequired("checkout.first.name"),
                 ConfigManager.getRequired("checkout.last.name"),
