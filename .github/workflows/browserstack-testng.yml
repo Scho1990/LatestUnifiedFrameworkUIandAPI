@@ -60,6 +60,10 @@ jobs:
         run: |
          mvn test -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} -DsuiteXmlFile=src/test/resources/suites/${{ github.event.inputs.suite || 'ui-testng.xml' }}
 
+      - name: Generate Allure Report
+        if: always()
+        run: mvn allure:report
+
       - name: Upload Surefire Reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -80,6 +84,13 @@ jobs:
         with:
           name: allure-results
           path: target/allure-results/
+
+      - name: Upload Allure HTML Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-html-report
+          path: target/site/allure-maven-plugin/
 
       - name: Build Success
         if: success()
