@@ -5,7 +5,7 @@ import com.enterprise.automation.utils.WaitUtils;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
-    private final By usernameInput = By.id("user-name");
+    private final By usernameInput = By.id("user-name1");
     private final By passwordInput = By.id("password");
     private final By loginButton = By.id("login-button");
     private final By errorMessage = By.cssSelector("[data-test='error']");
