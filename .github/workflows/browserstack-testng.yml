@@ -26,6 +26,11 @@ on:
 
 jobs:
   test:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     runs-on: windows-latest
     env:
       BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
@@ -58,7 +63,7 @@ jobs:
       - name: Execute TestNG Suite
         shell: cmd
         run: |
-         mvn test -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} -DsuiteXmlFile=src/test/resources/suites/${{ github.event.inputs.suite || 'ui-testng.xml' }}
+          mvn test -Dbrowser=${{ github.event.inputs.browser || 'chrome' }} -DsuiteXmlFile=src/test/resources/suites/${{ github.event.inputs.suite || 'ui-testng.xml' }}
 
       - name: Generate Allure Report
         if: always()
@@ -85,12 +90,20 @@ jobs:
           name: allure-results
           path: target/allure-results/
 
-      - name: Upload Allure HTML Report
-        if: always()
-        uses: actions/upload-artifact@v4
+      - name: Setup GitHub Pages
+        if: success()
+        uses: actions/configure-pages@v5
+
+      - name: Upload Allure Report to Pages Artifact
+        if: success()
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: allure-html-report
-          path: target/site/allure-maven-plugin/
+          path: target/site/allure-maven-plugin
+
+      - name: Deploy to GitHub Pages
+        if: success()
+        id: deployment
+        uses: actions/deploy-pages@v4
 
       - name: Build Success
         if: success()
