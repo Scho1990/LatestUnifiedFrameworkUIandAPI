@@ -91,17 +91,17 @@ jobs:
           path: target/allure-results/
 
       - name: Setup GitHub Pages
-        if: success()
+        if: always()
         uses: actions/configure-pages@v5
 
       - name: Upload Allure Report to Pages Artifact
-        if: success()
+        if: always()
         uses: actions/upload-pages-artifact@v3
         with:
           path: target/site/allure-maven-plugin
 
       - name: Deploy to GitHub Pages
-        if: success()
+        if: always()
         id: deployment
         uses: actions/deploy-pages@v4
 
